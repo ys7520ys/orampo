@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>패턴2</title>
+    <!--데스크 탑에서는 menu가 오른쪽에 위치하고
+    스마트폰으로 실행하였을 때는 menu가 위에 가도록 배치-->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1,maximum-scale=1">
+    <!--meta 태그의 이름을 viewport로 설정하였으며, user-scalable을 no로 설정하여
+    사용자가 확대 / 축소를 하지 못하도록 하였다, initial-scale을 1로 주어서 초기의 확대 
+    값과 원본의 사이즈가 같도록 만들었다, maximum-scale을 1로 주어서 가장 확대하였을 때의
+    크기가 원본의 곱하기1 이므로 사이즈의 변화가 일어나지 않는다.-->
+    <style>
+        *{
+            /*초기 값에 들어있는 margin, padding의 값을 0으로
+            설정하였다.*/
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 960px;
+            margin: 0 auto;
+            /*위아래의 마진을 0으로 주었고 좌우의 값을 auto로
+            주어서 수평 중앙 정렬을 하였다*/
+            overflow: hidden;
+            /*자속들에게 float를 주어서 옆에 배치하도록
+            만들기 위하여 부모에게 overflow hidden을 주었다.*/
+        }
+        #menu{
+            width: 260px;
+            float: right; /*left => right*/
+            /*float의 값을 left로 주어서 왼쪽부터 쌓이도록 함*/
+        }
+        #section{
+            width: 700px;
+            float: left; /*right => left*/
+            /*float의 값을 right로 주어서 오른쪽부터 쌓이도록 함 */
+        }
+        li {
+            list-style: none;
+            /*li의 값에서 list-style을 none으로 주어서
+            원래 앞에 붙는 동그라미를 제거하였다.*/
+        }
+        @media screen and (max-width:767px) {
+            /*스마트폰 사이즈에서는 전부 해제한다.
+            가로의 너비가 767px 값이 되기 전까지 
+            float의 값을 none으로 설정하여
+            위에서 아래로 쌓여가게 만든다.*/
+            body{
+                width: auto;
+                /*width의 값을 auto로 지정하여
+                스마트폰의 너비에 맞추어 자동으로 지정된다.*/
+            }
+            #menu{
+                width: auto;
+                /*스마트폰에서 실행이 될때에는 가로의 
+                영역이 화면 전체의 길이가 되므로 
+                길이를 지정할 필요가 없어진다.*/
+                float: none;
+                /*스마트폰에서 aside를 주어서 표현하면
+                값이 너무 작게 나타나기 때문에 
+                float의 값을 제거한다.*/
+            }
+            #section{
+                width: auto;
+                /*스마트폰에서 실행이 될때에는 가로의 
+                영역이 화면 전체의 길이가 되므로 
+                길이를 지정할 필요가 없어진다.*/
+                float: none;
+                /*스마트폰에서 aside를 주어서 표현하면
+                값이 너무 작게 나타나기 때문에 
+                float의 값을 제거한다.*/
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li>메뉴A</li>
+            <li>메뉴B</li>
+            <li>메뉴C</li>
+        </ul>
+    </div>
+    <div id="section">
+        <h1>Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit
+        </p>
+    </div>
+</body>
+</html>

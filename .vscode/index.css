@@ -1,0 +1,24 @@
+.container{
+    margin-top: 50px;
+    /*margin-top을 50px를 주어서 위에서 50px 띄워주었다.*/
+    margin-left: 50px;
+    /*margin-left를 50px를 주어서 왼족에서 50px 띄워주었다.*/
+}
+.top_bar{
+    background: red;
+    /*상단의 가로 바의 색깔을 빨강으로 설정하였다.*/
+    position: fixed;
+    /*position을 fixed로 주면서 */
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 50px;
+}
+.left_bar{
+    background: blue;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    width: 50px;
+}
